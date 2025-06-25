@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Treevance - Advancing Your Canopy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #81c784;
+            --accent: #ffb74d;
+            --dark: #1b5e20;
+            --light: #e8f5e9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            background-color: var(--light);
+        }
+        
+        .tree-icon {
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .consultant-section {
+            background-color: var(--light);
+        }
+        
+        .point-card {
+            background-color: white;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .point-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid #ddd;
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-tree text-3xl tree-icon mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Treevance</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Treevance</h2>
+                <p class="text-center text-gray-600 mb-12">Have questions about our services or need to schedule an appointment? Fill out the form below and one of our certified arborists will get back to you within 24 hours. For immediate assistance, please call us at (212) 555-0123.</p>
+                
+                <form class="contact-form bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Full Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-700 mb-2">Service Interest</label>
+                            <select id="service" name="service" class="border border-gray-300 rounded-md px-3 py-2 w-full">
+                                <option value="">Select a service</option>
+                                <option value="assessment">Tree Health Assessment</option>
+                                <option value="pruning">Tree Pruning</option>
+                                <option value="removal">Tree Removal</option>
+                                <option value="planting">Tree Planting</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2">Your Message*</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded transition duration-300 w-full">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Points Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Frequently Asked Questions</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Point 1 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">1. What services does Treevance offer?</h3>
+                    <p class="text-gray-600">Treevance provides comprehensive tree care services including tree health assessments, professional pruning, tree removal, planting services, soil management, and municipal tree management programs. Our certified arborists specialize in both residential and commercial tree care, with services tailored to meet your specific needs. We also offer emergency tree services for storm damage situations. Our team uses state-of-the-art equipment and follows industry best practices for all tree care operations.</p>
+                </div>
+                
+                <!-- Point 2 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">2. How quickly can you respond to service requests?</h3>
+                    <p class="text-gray-600">For non-emergency service requests, we typically respond within 24-48 hours to schedule an assessment. Emergency services for storm damage or hazardous tree situations receive priority response, often within hours of your call. Response times may vary depending on weather conditions and current workload. During peak seasons (spring and fall), response times may be slightly longer. We always strive to accommodate urgent requests as quickly as possible while maintaining our high standards of quality and safety.</p>
+                </div>
+                
+                <!-- Point 3 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">3. Are your arborists certified and insured?</h3>
+                    <p class="text-gray-600">All Treevance arborists are ISA (International Society of Arboriculture) certified and maintain ongoing education requirements. We carry comprehensive liability insurance ($2,000,000 coverage) and workers' compensation insurance for all our team members. Certifications are verified annually to ensure compliance with industry standards. Our team also participates in regular safety training and stays current with the latest arboricultural research and techniques. Copies of our insurance certificates are available upon request.</p>
+                </div>
+                
+                <!-- Point 4 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">4. What areas do you serve?</h3>
+                    <p class="text-gray-600">Treevance serves the entire New York metropolitan area including all five boroughs (Manhattan, Brooklyn, Queens, Bronx, and Staten Island), as well as Nassau and Westchester counties. For larger municipal projects, we service communities throughout the tri-state area. Service availability in outlying areas may depend on the scope of work. There may be a small travel fee for locations beyond our standard service area, which we'll always discuss during the estimate process.</p>
+                </div>
+                
+                <!-- Point 5 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">5. How are your prices determined?</h3>
+                    <p class="text-gray-600">Our pricing is based on several factors including the scope of work, tree size, location, accessibility, and any special equipment needs. We provide free, no-obligation estimates after assessing your specific situation. Our pricing is competitive and reflects our high standards for quality, safety, and professionalism. We're happy to provide itemized quotes that break down all costs so you understand exactly what you're paying for. Payment terms are discussed when we provide the estimate.</p>
+                </div>
+                
+                <!-- Point 6 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">6. Do I need a permit for tree work?</h3>
+                    <p class="text-gray-600">Permit requirements vary by municipality and tree species. In many cases, especially for tree removal or significant pruning of protected species, permits are required. Our team is familiar with local tree ordinances throughout our service area and will advise you on necessary permits. For properties with landmark status or in historic districts, additional approvals may be needed. We can handle the permit application process for you, including any required documentation or arborist reports.</p>
+                </div>
+                
+                <!-- Point 7 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">7. What is your process for tree removal?</h3>
+                    <p class="text-gray-600">Our tree removal process begins with a thorough assessment by a certified arborist to evaluate the tree's health and structure. We'll discuss alternatives to removal when possible. If removal is necessary, we'll develop a detailed plan considering access, equipment needs, and safety precautions. Our crew uses specialized rigging techniques to remove trees safely, even in tight spaces. All debris is chipped and removed from your property unless otherwise arranged. Stump grinding is available as an additional service.</p>
+                </div>
+                
+                <!-- Point 8 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">8. How often should my trees be pruned?</h3>
+                    <p class="text-gray-600">Most trees benefit from pruning every 3-5 years, though this can vary by species, age, and location. Young trees may need more frequent pruning (every 2-3 years) to establish good structure. Mature trees typically require less frequent attention. Our arborists will provide specific recommendations for your trees based on their assessment. Routine pruning helps maintain tree health, reduces storm damage risk, and enhances appearance. We follow ANSI A300 pruning standards for all work.</p>
+                </div>
+                
+                <!-- Point 9 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">9. Can you help with diseased trees?</h3>
+                    <p class="text-gray-600">Yes, diagnosing and treating tree diseases is a specialty of our team. We're experienced with common urban tree ailments like Dutch elm disease, oak wilt, anthracnose, and more. Treatment options vary depending on the disease and may include cultural practices, fungicide treatments, or in some cases, removal to prevent spread. Early intervention is key, so contact us at the first signs of trouble like unusual leaf spots, premature defoliation, or dieback. We'll provide a diagnosis and recommend the most effective treatment plan.</p>
+                </div>
+                
+                <!-- Point 10 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">10. What's the best time to plant trees?</h3>
+                    <p class="text-gray-600">In our climate, the ideal times for planting are early spring (March-May) and early fall (September-October). These cooler seasons allow trees to establish roots without the stress of summer heat. However, container-grown trees can be planted year-round with proper care. We'll help select the right species for your site conditions and provide detailed planting and care instructions. Proper planting technique is crucial for long-term tree health - we follow research-based methods to give your new trees the best start.</p>
+                </div>
+                
+                <!-- Point 11 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">11. How do I know if my tree is dangerous?</h3>
+                    <p class="text-gray-600">Warning signs of a potentially hazardous tree include large dead branches, cracks in the trunk, significant lean, fungal growth at the base, or roots lifting the soil. Cavities or decay in the trunk or major limbs may also indicate structural weakness. If you notice any of these signs, contact us for a professional assessment. Our arborists use specialized tools to evaluate tree stability and can recommend appropriate action, which may range from monitoring to pruning or removal if serious hazards are present.</p>
+                </div>
+                
+                <!-- Point 12 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">12. What payment methods do you accept?</h3>
+                    <p class="text-gray-600">We accept all major credit cards (Visa, Mastercard, American Express, Discover), checks, and cash. Payment is due upon completion of the work unless otherwise arranged. For larger projects, we may require a deposit upfront with the balance due upon completion. We also offer financing options through third-party providers to help make our services more accessible. Please inquire about payment options when scheduling your service or during the estimate process.</p>
+                </div>
+                
+                <!-- Point 13 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">13. Do you offer warranties on your services?</h3>
+                    <p class="text-gray-600">Yes, we offer a satisfaction guarantee on all our services. If you're not completely satisfied with the work performed, please let us know within 30 days, and we will address your concerns. For specific services like tree planting, we provide a warranty period during which we will replace any dead trees due to our planting errors. The warranty details will be outlined in your service agreement. We stand behind our work and are committed to ensuring your satisfaction.</p>
+                </div>
+                
+                <!-- Point 14 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">14. How can I prepare for your visit?</h3>
+                    <p class="text-gray-600">To prepare for our visit, please ensure that the area around the trees is accessible and free of obstacles such as furniture, vehicles, or debris. If you have specific concerns or questions, jot them down to discuss with our arborist during the assessment. If you have any relevant documents, such as previous tree care records or permits, please have them ready. This will help us provide the best service possible and address your needs effectively.</p>
+                </div>
+                
+                <!-- Point 15 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">15. What should I do if a tree falls on my property?</h3>
+                    <p class="text-gray-600">If a tree falls on your property, ensure your safety first. Avoid any downed power lines and evacuate the area if necessary. Contact emergency services if there are injuries or immediate hazards. For tree removal, call us as soon as it is safe to do so. We offer emergency services and can assess the situation quickly. Our team will safely remove the fallen tree and any debris, and we can help with insurance claims if needed.</p>
+                </div>
+                
+                <!-- Point 16 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">16. Can you help with landscaping design?</h3>
+                    <p class="text-gray-600">Yes, our landscape architects can assist with designing beautiful, sustainable landscapes that incorporate trees, shrubs, and other plants. We focus on creating designs that enhance the natural beauty of your property while considering factors like soil type, sunlight, and water availability. Our team will work with you to understand your vision and preferences, ensuring the final design meets your needs and complements your home or business.</p>
+                </div>
+                
+                <!-- Point 17 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">17. What is the best way to water my trees?</h3>
+                    <p class="text-gray-600">Deep watering is the most effective method for tree health. Water your trees thoroughly, allowing the water to penetrate the soil to a depth of at least 12-18 inches. This encourages deep root growth. Use a soaker hose or drip irrigation system for efficiency. Watering should be done early in the morning or late in the evening to minimize evaporation. Newly planted trees require more frequent watering until established, while mature trees may need less frequent but deeper watering.</p>
+                </div>
+                
+                <!-- Point 18 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">18. How can I improve the soil quality for my trees?</h3>
+                    <p class="text-gray-600">Improving soil quality involves several practices, including adding organic matter like compost, mulching, and aerating the soil. Conducting a soil test can help identify nutrient deficiencies and pH levels. Based on the results, you can amend the soil with appropriate fertilizers or soil conditioners. Regular mulching helps retain moisture and suppress weeds, while aeration improves oxygen flow to the roots. Our team can provide tailored soil management plans to enhance your tree's growing conditions.</p>
+                </div>
+                
+                <!-- Point 19 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">19. What are the signs of a healthy tree?</h3>
+                    <p class="text-gray-600">Healthy trees exhibit vibrant green leaves, strong growth, and a well-formed canopy. The bark should be intact without cracks or lesions, and the tree should have a balanced structure with no significant lean. Roots should be well-established and not exposed. Regular inspections can help identify any early signs of stress or disease. If you notice any unusual symptoms, such as leaf discoloration or premature leaf drop, contact us for an assessment to ensure your tree remains healthy.</p>
+                </div>
+                
+                <!-- Point 20 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">20. How do I choose the right tree for my property?</h3>
+                    <p class="text-gray-600">Choosing the right tree involves considering factors such as your local climate, soil type, available space, and intended use (shade, ornamental, etc.). Native species are often the best choice as they are adapted to local conditions and support local wildlife. Our arborists can help you select the best species for your site and provide guidance on planting and care. We also consider future growth and maintenance needs to ensure your tree thrives for years to come.</p>
+                </div>
+                
+                <!-- Point 21 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">21. What is the importance of tree canopy cover?</h3>
+                    <p class="text-gray-600">Tree canopy cover plays a crucial role in urban environments by providing shade, reducing heat, improving air quality, and enhancing biodiversity. Canopy cover helps mitigate the urban heat island effect, lowers energy costs, and improves overall community aesthetics. It also provides habitat for wildlife and contributes to stormwater management by reducing runoff. Our team can help municipalities develop strategies to increase canopy cover and maximize these benefits for their communities.</p>
+                </div>
+                
+                <!-- Point 22 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">22. How can I protect my trees from pests?</h3>
+                    <p class="text-gray-600">Protecting trees from pests involves regular monitoring, maintaining tree health, and implementing preventive measures. Healthy trees are more resilient to pest infestations. Cultural practices such as proper watering, mulching, and pruning can help. If pests are detected, our arborists can recommend appropriate treatments, which may include insecticidal sprays or biological controls. Early intervention is key to preventing significant damage, so contact us if you notice any signs of pest activity.</p>
+                </div>
+                
+                <!-- Point 23 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">23. What are the benefits of tree planting?</h3>
+                    <p class="text-gray-600">Tree planting offers numerous environmental, economic, and social benefits. Trees improve air quality, provide shade, reduce energy costs, and enhance property values. They also support biodiversity by providing habitat for wildlife and contribute to stormwater management. Additionally, trees can improve mental health and well-being by creating green spaces for recreation and relaxation. Our team is dedicated to promoting tree planting initiatives and can assist with community planting projects.</p>
+                </div>
+                
+                <!-- Point 24 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">24. How do I maintain my trees after planting?</h3>
+                    <p class="text-gray-600">After planting, it's essential to provide proper care to ensure successful establishment. This includes regular watering, mulching, and monitoring for pests and diseases. Newly planted trees should be watered deeply once a week, especially during dry spells. Mulching helps retain moisture and suppress weeds. Pruning should be minimal in the first year, focusing on removing any dead or damaged branches. Our team can provide ongoing maintenance services to help your trees thrive.</p>
+                </div>
+                
+                <!-- Point 25 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">25. What is the role of trees in climate change mitigation?</h3>
+                    <p class="text-gray-600">Trees play a vital role in mitigating climate change by absorbing carbon dioxide from the atmosphere and storing carbon in their biomass. They also help regulate temperatures, improve air quality, and reduce stormwater runoff. Urban forests can significantly lower energy consumption by providing shade and cooling effects. By planting and maintaining trees, we can enhance their benefits and contribute to a healthier environment. Our initiatives focus on increasing tree canopy cover to combat climate change effectively.</p>
+                </div>
+                
+                <!-- Point 26 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">26. How can I get involved in tree care initiatives?</h3>
+                    <p class="text-gray-600">Getting involved in tree care initiatives can be as simple as volunteering for local tree planting events, participating in community clean-up days, or advocating for urban forestry programs. Many organizations, including Treevance, offer volunteer opportunities and educational workshops. You can also support local tree care efforts by donating to non-profits focused on reforestation and urban greening. Contact us to learn about upcoming events and how you can contribute to enhancing your community's green spaces.</p>
+                </div>
+                
+                <!-- Point 27 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">27. What are the best practices for tree pruning?</h3>
+                    <p class="text-gray-600">Best practices for tree pruning include using the right tools, making clean cuts, and following the natural shape of the tree. Pruning should be done during the dormant season to minimize stress. Avoid topping trees, as this can lead to weak growth and increased risk of disease. Always remove dead, damaged, or crossing branches first. Our certified arborists follow ANSI A300 standards for pruning to ensure the health and safety of your trees. We offer professional pruning services to maintain your trees' structure and health.</p>
+                </div>
+                
+                <!-- Point 28 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">28. How do I identify tree species?</h3>
+                    <p class="text-gray-600">Identifying tree species involves examining characteristics such as leaf shape, bark texture, growth habit, and flower or fruit type. Field guides and mobile apps can assist with identification. Our arborists are knowledgeable about local species and can help you identify trees on your property. Understanding the species is crucial for proper care, as different trees have varying needs for water, sunlight, and soil conditions. We can provide guidance on the best practices for maintaining your specific tree species.</p>
+                </div>
+                
+                <!-- Point 29 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">29. What is the impact of invasive species on local ecosystems?</h3>
+                    <p class="text-gray-600">Invasive species can disrupt local ecosystems by outcompeting native plants for resources, altering habitats, and introducing diseases. They often lack natural predators, allowing them to proliferate unchecked. This can lead to a decline in biodiversity and negatively impact wildlife that relies on native species for food and shelter. Our team is experienced in managing invasive species and can provide recommendations for controlling their spread while promoting the health of native ecosystems.</p>
+                </div>
+                
+                <!-- Point 30 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">30. How can I create a wildlife-friendly landscape?</h3>
+                    <p class="text-gray-600">Creating a wildlife-friendly landscape involves planting native species, providing food and shelter, and minimizing pesticide use. Native plants attract pollinators and provide habitat for birds and other wildlife. Incorporating features like birdhouses, water sources, and brush piles can enhance your landscape's appeal to wildlife. Our landscape architects can help design a wildlife-friendly garden that supports local ecosystems while enhancing your property’s beauty.</p>
+                </div>
+                
+                <!-- Point 31 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">31. What are the benefits of mulching?</h3>
+                    <p class="text-gray-600">Mulching offers numerous benefits, including moisture retention, weed suppression, and temperature regulation for the soil. Organic mulches, such as wood chips or bark, decompose over time, enriching the soil with nutrients. Mulching also helps prevent soil erosion and protects tree roots from extreme temperatures. We recommend applying a 2-4 inch layer of mulch around the base of trees, keeping it away from the trunk to prevent rot. Our team can assist with mulching services to enhance your landscape.</p>
+                </div>
+                
+                <!-- Point 32 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">32. How do I manage stormwater with trees?</h3>
+                    <p class="text-gray-600">Trees play a vital role in managing stormwater by absorbing rainfall and reducing runoff. Their root systems help improve soil structure, allowing for better water infiltration. Planting trees in strategic locations can help mitigate flooding and erosion. We can assist municipalities and property owners in developing stormwater management plans that incorporate tree planting and maintenance to enhance water quality and reduce flooding risks.</p>
+                </div>
+                
+                <!-- Point 33 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">33. What is the importance of tree diversity?</h3>
+                    <p class="text-gray-600">Tree diversity is crucial for ecosystem resilience. A diverse tree population can better withstand pests, diseases, and climate change impacts. It also supports a wider range of wildlife and contributes to overall ecosystem health. Planting a variety of species in urban areas can enhance aesthetic appeal and provide multiple benefits, such as improved air quality and reduced heat. Our team advocates for planting diverse species to create sustainable urban forests.</p>
+                </div>
+                
+                <!-- Point 34 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">34. How can I prevent tree damage during construction?</h3>
+                    <p class="text-gray-600">Preventing tree damage during construction involves careful planning and protective measures. Establishing tree protection zones, using barriers, and minimizing soil compaction around roots are essential. Our arborists can conduct pre-construction assessments to identify at-risk trees and recommend strategies to protect them. We can also provide oversight during construction to ensure compliance with protection measures, helping to preserve valuable trees on your property.</p>
+                </div>
+                
+                <!-- Point 35 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">35. What are the signs of overwatering?</h3>
+                    <p class="text-gray-600">Signs of overwatering include yellowing leaves, wilting, and root rot. Soil that remains consistently wet can suffocate roots and lead to fungal diseases. If you notice these symptoms, it’s essential to adjust your watering schedule and improve drainage if necessary. Our team can assess your trees and provide recommendations for proper watering practices to ensure healthy growth.</p>
+                </div>
+                
+                <!-- Point 36 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">36. How do I care for newly planted trees?</h3>
+                    <p class="text-gray-600">Caring for newly planted trees involves regular watering, mulching, and monitoring for pests. Water deeply once a week, especially during dry spells, and apply a 2-4 inch layer of mulch to retain moisture. Avoid heavy pruning in the first year, focusing on removing any dead or damaged branches. Our team can provide ongoing maintenance services to help your new trees establish successfully.</p>
+                </div>
+                
+                <!-- Point 37 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">37. What is the best way to prune fruit trees?</h3>
+                    <p class="text-gray-600">Pruning fruit trees involves removing dead or diseased wood, thinning crowded branches, and shaping the tree for optimal sunlight exposure. The best time to prune is during the dormant season, typically late winter to early spring. Proper pruning encourages healthy growth and fruit production. Our certified arborists can provide expert pruning services tailored to your fruit tree species and specific needs.</p>
+                </div>
+                
+                <!-- Point 38 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">38. How can I support local tree planting efforts?</h3>
+                    <p class="text-gray-600">Supporting local tree planting efforts can involve volunteering for community planting days, donating to local non-profits focused on reforestation, or advocating for urban forestry initiatives. You can also educate others about the importance of trees and encourage friends and family to participate in tree care activities. Our team can provide information on upcoming events and how you can get involved in enhancing your community's green spaces.</p>
+                </div>
+                
+                <!-- Point 39 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">39. What are the benefits of tree canopies?</h3>
+                    <p class="text-gray-600">Tree canopies provide shade, reduce heat, improve air quality, and enhance biodiversity. They help mitigate urban heat islands, lower energy costs, and create more pleasant outdoor environments. Canopies also play a crucial role in stormwater management by intercepting rainfall and reducing runoff. Additionally, they provide habitat for various wildlife species. Our team is dedicated to increasing tree canopy cover in urban areas to maximize these benefits for communities. We can assist municipalities in developing strategies to enhance canopy cover through tree planting and maintenance programs.</p>
+                </div>
+                
+                <!-- Point 40 -->
+                <div class="point-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">40. How do I choose the right mulch for my trees?</h3>
+                    <p class="text-gray-600">Choosing the right mulch involves considering the type of tree, soil conditions, and aesthetic preferences. Organic mulches, such as wood chips or bark, are excellent for moisture retention and soil enrichment as they decompose. Inorganic options like gravel or rubber mulch can be used for decorative purposes but do not provide the same soil benefits. It's essential to apply mulch correctly, keeping it away from the tree trunk to prevent rot. Our team can recommend the best mulch options for your specific trees and landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-10 bg-dark text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">Contact us at: 69 W 9th St, New York, NY 10011, USA</p>
+            <p>Phone: (212) 555-0123</p>
+            <p>&copy; 2023 Treevance. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
