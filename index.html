@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treevance - Advancing Your Canopy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #81c784;
+            --accent: #ffb74d;
+            --dark: #1b5e20;
+            --light: #e8f5e9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            background-color: var(--light);
+        }
+        
+        .tree-icon {
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .consultant-section {
+            background-color: var(--light);
+        }
+        
+        .image-gallery img {
+            transition: transform 0.3s ease;
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .price-tag {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .tip-card {
+            background-color: white;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-tree text-3xl tree-icon mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">Treevance</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-6">Advancing Your Canopy</h1>
+            <p class="text-xl mb-8">Innovative tree care solutions for municipalities, businesses, and homeowners throughout the New York metropolitan area. Since 2010, we've been blending cutting-edge arboriculture with sustainable practices to revolutionize urban forestry. Our team of ISA-certified arborists brings decades of combined experience to every project, ensuring your trees receive the expert care they deserve.</p>
+            <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                Get Your Free Consultation
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="p1.png" alt="Treevance Team" class="rounded-lg shadow-2xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Treevance</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2010 by a team of passionate arborists, Treevance has grown from a small local service to the premier tree care provider in the Northeast. Our name reflects our mission - combining Tree innovation with forward-thinking Advancements in arboriculture. We've expanded our services to cover all aspects of tree care while maintaining our commitment to sustainable practices and scientific methodology.</p>
+                    <p class="text-gray-600 mb-4">What sets us apart is our commitment to evidence-based tree care. All our arborists maintain ISA (International Society of Arboriculture) certification and participate in ongoing education. We invest in the latest diagnostic technology including resistographs, sonic tomography, and air spade tools to provide accurate assessments. Our research division collaborates with universities to develop new techniques for urban tree care.</p>
+                    <p class="text-gray-600 mb-4">Our municipal division has managed urban forestry programs for over 30 communities, helping them develop sustainable canopy management strategies, respond to invasive pests like the spotted lanternfly and emerald ash borer, and maximize the environmental benefits of their urban forests. We've helped municipalities secure over $2 million in grants for tree planting and maintenance programs.</p>
+                    <p class="text-gray-600 mb-6">For residential clients, we offer a full suite of services from routine maintenance to emergency storm response. We're proud to be the tree care provider of choice for many historic properties and conservation areas, helping preserve specimens that are centuries old. Our residential clients benefit from the same level of expertise we bring to municipal contracts, ensuring healthy, beautiful trees that enhance property values and quality of life.</p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Learn More About Our Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Prices and Images -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Our Comprehensive Services</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">We offer a complete range of professional tree care services tailored to meet the needs of residential, commercial, and municipal clients. Our services are designed to promote tree health, ensure public safety, and enhance the beauty of your landscape. Below you'll find detailed information about each service we provide.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s1.jpeg" alt="Tree Assessment" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tree Health Assessments</h3>
+                    <div class="price-tag">Starting at $250</div>
+                    <p class="text-gray-600 mb-4">Our certified arborists conduct thorough evaluations using advanced diagnostic tools to identify diseases, pests, and structural issues before they become critical problems. Regular assessments can extend tree life by decades and prevent costly removals.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Comprehensive visual inspection including climbing inspection when needed</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Resistograph testing to identify internal decay ($150 additional)</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Pest and disease identification with treatment recommendations</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Root collar examination for girdling roots</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Detailed 10+ page report with color photos and prioritized recommendations</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Book Assessment
+                    </button>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s2.jpeg" alt="Municipal Services" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Municipal Tree Management</h3>
+                    <div class="price-tag">Custom Pricing</div>
+                    <p class="text-gray-600 mb-4">Complete urban forestry solutions for cities and towns, including inventory, maintenance planning, and risk assessment tailored to your budget and needs. We've helped municipalities increase canopy cover by up to 30% while reducing maintenance costs.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>GIS-based tree inventory and mapping (starting at $7/tree)</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Canopy cover analysis and urban heat island mitigation planning</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Stormwater credit documentation for MS4 compliance</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Emerald ash borer management plans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Comprehensive tree ordinance development and updates</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Request Proposal
+                    </button>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s3.jpeg" alt="Tree Pruning" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Professional Pruning</h3>
+                    <div class="price-tag">Starting at $350</div>
+                    <p class="text-gray-600 mb-4">Structural pruning to improve tree health, safety, and aesthetics using ANSI A300 standards. Our certified arborists make every cut with purpose, following the latest research on tree wound response and compartmentalization.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span >Crown cleaning and thinning to reduce wind resistance and improve light penetration</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Vista pruning for views ($75+/hour, based on complexity)</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Lightning protection system installation ($600+)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Cabling and bracing for structural support ($450+)</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Schedule Pruning
+                    </button>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s4.jpeg" alt="Tree Planting" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tree Planting</h3>
+                    <div class="price-tag">Starting at $350 per tree</div>
+                    <p class="text-gray-600 mb-4">Right tree, right place - our experts select and install trees for optimal growth and environmental benefits. We ensure that every tree is planted with care and precision, considering factors such as soil type, sunlight, and water availability.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Site assessment to determine the best location for planting</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Species selection based on soil and climate conditions</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Proper planting techniques to ensure tree health and stability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Post-planting care and maintenance advice to ensure successful establishment</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Schedule Planting
+                    </button>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s5.jpeg" alt="Tree Removal" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tree Removal</h3>
+                    <div class="price-tag">Starting at $500</div>
+                    <p class="text-gray-600 mb-4">Safe, efficient tree removal when necessary, with minimal impact to surrounding landscape. Our team is trained to handle even the most challenging removals, ensuring safety and compliance with local regulations.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Risk assessment to determine removal necessity and safety</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Precision rigging to ensure safe removal without damage to surrounding property</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Stump grinding options available ($150+)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Cleanup and debris removal included in all removal services</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Request Removal
+                    </button>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <img src="s6.jpeg" alt="Soil Management" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Soil Management</h3>
+                    <div class="price-tag">Starting at $200</div>
+                    <p class="text-gray-600 mb-4">Improving tree health through proper soil aeration, fertilization, and pH balancing. Our soil management services ensure your trees have the nutrients they need to thrive, promoting robust growth and resilience against pests and diseases.</p>
+                    <ul class="mb-4 text-gray-600">
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Soil testing to determine nutrient levels and deficiencies</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Vertical mulching to improve aeration and water infiltration</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Biochar applications for enhanced soil health and carbon sequestration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Custom fertilization plans based on soil analysis and tree species</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Schedule Soil Management
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultant Section -->
+    <section class="consultant-section py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Our Expert Consultants</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dr. Emily Arbor" class="w-32 h-32 rounded-full object-cover mb-4 md:mb-0 md:mr-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Dr. Emily Arbor</h3>
+                            <p class="text-green-600 mb-2">Certified Arborist</p>
+                            <p class="text-gray-600">With over 15 years of experience, Dr. Arbor specializes in tree health assessments and urban forestry management. She is passionate about educating communities on the importance of trees and their care.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mr. John Green" class="w-32 h-32 rounded-full object-cover mb-4 md:mb-0 md:mr-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Mr. John Green</h3>
+                            <p class="text-green-600 mb-2">Landscape Architect</p>
+                            <p class="text-gray-600">John has a passion for creating sustainable landscapes that enhance urban environments. He works closely with municipalities to design green spaces that promote biodiversity and community well-being.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ms. Sarah Leaf" class="w-32 h-32 rounded-full object-cover mb-4 md:mb-0 md:mr-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Ms. Sarah Leaf</h3>
+                            <p class="text-green-600 mb-2">Horticulturist</p>
+                            <p class="text-gray-600">Sarah focuses on plant health and soil management, ensuring optimal growth for all species. She is dedicated to promoting sustainable practices in horticulture and educating clients on the benefits of native plants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Client Feedback</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="testimonial-card p-8 bg-gray-100 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Treevance transformed our community park! Their team was professional and knowledgeable. Highly recommend!"</p>
+                    <p class="font-bold text-gray-800">- Mayor Jane Doe</p>
+                </div>
+                <div class="testimonial-card p-8 bg-gray-100 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"The consultation was thorough, and the results were fantastic. Our trees have never looked better!"</p>
+                    <p class="font-bold text-gray-800">- Mr. Tom Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Tree Care Tips</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Proper tree care is essential for maintaining healthy trees and enhancing the beauty of your landscape. Here are some expert tips to help you care for your trees:</p>
+            <ul class="list-disc list-inside text-gray-600">
+                <li>Regularly inspect your trees for signs of disease or damage.</li>
+                <li>Water deeply but infrequently to encourage deep root growth.</li>
+                <li>Mulch around the base to retain moisture and suppress weeds.</li>
+                <li>Prune during the dormant season to promote healthy growth.</li>
+                <li>Consult with a certified arborist for any major tree work.</li>
+                <li>Fertilize your trees in early spring to provide essential nutrients.</li>
+                <li>Monitor for pests and diseases, and act quickly to mitigate issues.</li>
+                <li>Consider planting native species that are well-adapted to your local environment.</li>
+                <li>Ensure proper spacing between trees to allow for healthy growth and airflow.</li>
+                <li>Educate yourself about the specific needs of the tree species you have.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Disclaimer</h2>
+            <p class="text-gray-600">The information provided on this website is for general informational purposes only. Treevance does not guarantee the accuracy or completeness of any information on this site. Always consult a professional for specific advice regarding tree care and management. The services offered are subject to availability and may vary based on location and specific client needs.</p>
+        </div>
+    </section>
+
+    <!-- Customer Satisfaction Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Customer Satisfaction</h2>
+            <p class="text-gray-600">At Treevance, we prioritize customer satisfaction above all. Our dedicated team is committed to providing exceptional service and ensuring that every client is happy with the results. Your trees are our passion, and we strive to exceed your expectations. We welcome feedback and continuously seek ways to improve our services.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="py-10 bg-dark text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">Contact us at: 69 W 9th St, New York, NY 10011, USA</p>
+            <p>&copy; 2023 Treevance. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
